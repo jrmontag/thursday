@@ -1,1 +1,2 @@
+# Python 2.7 (AWS Lambda req)
 python-twitter
