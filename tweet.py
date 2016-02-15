@@ -53,5 +53,4 @@ def send_tweet(event, context):
         return e.message
 
 if __name__ == '__main__':
-    #print send_tweet(None, None)
     print tweet_content()
