@@ -33,7 +33,7 @@ def tweet_content():
         'def no'
         ]
     # check Thursday (= 3) against current weekday (Monday=0)
-    if datetime.now().weekday == 3:
+    if datetime.now().weekday() == 3:
         return random.choice(yes_opts) 
     else:
         return random.choice(no_opts) 
