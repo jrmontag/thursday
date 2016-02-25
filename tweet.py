@@ -1,8 +1,12 @@
 from datetime import datetime
 import json
+import logging
 import random
 
 import twitter as tw
+
+logger = logging.getLogger()
+logger.setLevel(logging.INFO)
 
 def tweet_content():
     """Generate tweet string (140 characters or less)
@@ -42,14 +46,19 @@ def tweet_content():
 def send_tweet(event, context):
     """Post tweet
     """
+    logging.info('Time to send a Tweet')
     with open("twitter_credentials.json", "r") as f:
         credentials = json.load(f)
+    logging.info('loaded a credentials file')
     t = tw.Api(**credentials)
+    logging.info('sending tweet')
     try:
         status = tweet_content()
         t.PostUpdate(status=status)
+        logging.info('Tweeted {}'.format(status))
         return "Tweeted {}".format(status)
     except Exception as e:
+        logging.error('uh oh: {}'.format(e))
         return e.message
 
 if __name__ == '__main__':
