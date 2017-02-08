@@ -26,7 +26,6 @@ def tweet_content():
         'no',
         'of course not',
         'big tall glass of nope',
-        'does trump seem like a good presidential candidate?',
         'how about no, scott',
         'hang tight',
         'gotta wait it out',
